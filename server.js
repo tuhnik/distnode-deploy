@@ -8,6 +8,7 @@ const Recipe = require('./recipe.js');
 server.get('/', async (req, reply) => {
   return "Hello from Distributed Node.js!";
 });
+
 server.get('/recipes/:id', async (req, reply) => {
   const recipe = new Recipe(req.params.id);
   await recipe.hydrate();
